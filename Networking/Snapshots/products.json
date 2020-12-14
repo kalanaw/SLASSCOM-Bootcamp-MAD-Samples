@@ -1,0 +1,107 @@
+// JSON - Products List
+
+{
+  "Items": [
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-7.png",
+      "currency": "LKR",
+      "stock": 34,
+      "price": 999,
+      "description": "Donut like toy for your dog to go nuts",
+      "id": "8ac23277-fe54-4344-bf20-463a8cef001d",
+      "name": "Donut toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-9.png",
+      "currency": "LKR",
+      "stock": 37,
+      "price": 870,
+      "description": "Buy this product to recieve a random toy",
+      "id": "d84363cd-5b7c-4cc8-931a-7bd79e45b8ab",
+      "name": "Surprise toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-11.png",
+      "currency": "LKR",
+      "stock": 0,
+      "price": 1323,
+      "description": "Chew toy with jingles to keep your pet happy",
+      "id": "56d2476b-f481-4b4d-b67a-c7a4b73f80df",
+      "name": "Jingle bells bone"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-3.png",
+      "currency": "LKR",
+      "stock": 4,
+      "price": 550,
+      "description": "Your dog pet would love the easy to catch bone shaped toy",
+      "id": "bc66edf8-03a8-4d9e-9524-b03cca25fd43",
+      "name": "Bone shape toy"
+    },
+    {
+      "currency": "LKR",
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-1.png",
+      "stock": 10,
+      "description": "Frisbee can be fun for you and your dog too. How far can you throw and can your doggie friend fetch it?",
+      "id": "67cb73ea-39aa-4296-878f-1ba68ba538d8",
+      "price": 899.99,
+      "name": "Colourful Frisbee"
+    },
+    {
+      "currency": "LKR",
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-2.png",
+      "stock": 42,
+      "description": "Ideal toy for small to medium dogs. Made with soft rubber making it easier to chew.",
+      "id": "bc66edf8-03a8-4d9e-9524-b03cca78bf5d",
+      "price": 650,
+      "name": "Soft Chew Toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-9.png",
+      "currency": "LKR",
+      "stock": 13,
+      "price": 1100,
+      "description": "Soft rope ball chew toy",
+      "id": "cd985f9a-5732-4882-9c48-3b8123855138",
+      "name": "Rope ball chew toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-4.png",
+      "currency": "LKR",
+      "stock": 23,
+      "price": 1200,
+      "description": "Hard rubber chew toy for your furry friend who tears other toys",
+      "id": "bc66edf8-03a8-4d9e-9524-b03cca7lem3d",
+      "name": "Hard Chew Toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-6.png",
+      "currency": "LKR",
+      "stock": 65,
+      "price": 1250,
+      "description": "Chewing toy with incentive. Include treats in the toy.",
+      "id": "19951441-83e8-4297-a8e9-e1633f4bf75d",
+      "name": "Food Dispensor Toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-8.png",
+      "currency": "LKR",
+      "stock": 43,
+      "price": 1340,
+      "description": "Rugged studded bone toy that helps clean teeth",
+      "id": "8585226b-0957-468f-a008-568d7ee29d94",
+      "name": "Rugged bone toy"
+    },
+    {
+      "imageUrl": "https://bootcamp-mad.s3-us-west-2.amazonaws.com/product-image-5.png",
+      "currency": "LKR",
+      "stock": 8,
+      "price": 1850,
+      "description": "Toy with bells and almost whistles!",
+      "id": "6cfa6a89-fb87-476e-b0e7-b17905c545c9",
+      "name": "Toy with Bells"
+    }
+  ],
+  "Count": 11,
+  "ScannedCount": 11
+}

@@ -1,7 +1,5 @@
-// data show from API
-
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { SafeAreaView, ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
 
 export default App = () => {
   const [isLoading, setLoading] = useState(true);
@@ -26,7 +24,15 @@ export default App = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Text>{item.name}</Text>
+            <View style={{ flex: 1}}>
+              <Text>{item.name}</Text>
+              <Image
+                style={{width: 50,height: 50}}
+                source={{
+                  uri: item.imageUrl,
+                }}
+              />
+            </View>
           )}
         />
       )}
