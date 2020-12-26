@@ -1,7 +1,5 @@
-// data show from API
-
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { SafeAreaView, ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
 
 export default App = () => {
   const [isLoading, setLoading] = useState(true);
@@ -25,8 +23,22 @@ export default App = () => {
         <FlatList
           data={data}
           keyExtractor={({ id }, index) => id}
+          ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#DDD' }} />}
           renderItem={({ item }) => (
-            <Text>{item.name}</Text>
+            <View style={{ flex: 1, flexDirection: 'row', padding: 6 }}>
+              <Image
+                style={{width: 50,height: 50, margin: 10}}
+                source={{
+                  uri: item.imageUrl,
+                }}
+              />
+              <View style={{ flex: 1, padding: 12 }}>
+                <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 6 }}>{item.name}</Text>
+                <Text style={{ marginBottom: 6 }}>{item.description}</Text>
+                <Text>Price: {item.price} {item.currency}</Text>
+              </View>
+              
+            </View>
           )}
         />
       )}

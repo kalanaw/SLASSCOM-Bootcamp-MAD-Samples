@@ -1,4 +1,4 @@
-// data show from API
+// data show from API - tag: networking-1
 
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ActivityIndicator, FlatList, Text, View } from 'react-native';

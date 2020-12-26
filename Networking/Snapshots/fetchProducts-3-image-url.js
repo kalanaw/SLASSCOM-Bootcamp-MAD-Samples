@@ -25,13 +25,13 @@ export default App = () => {
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
             <View style={{ flex: 1}}>
-              <Text>{item.name}</Text>
               <Image
                 style={{width: 50,height: 50}}
                 source={{
                   uri: item.imageUrl,
                 }}
               />
+              <Text>{item.name}</Text>
             </View>
           )}
         />
