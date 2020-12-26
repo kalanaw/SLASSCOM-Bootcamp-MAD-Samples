@@ -1,4 +1,4 @@
-// fetchProduts - Image 1
+// fetchProduts - dummy Image 1
 
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
