@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, Image, StyleSheet } from 'react-native';
+import { theme } from "./../../styles";
 
 const ProductListItem = ({item}) => {
   return (
@@ -13,7 +14,7 @@ const ProductListItem = ({item}) => {
       <View style={styles.infoContainer}>
         <Text style={styles.textName}>{item.name}</Text>
         <Text style={styles.textDescription}>{item.description}</Text>
-        <Text>Price: {item.price} {item.currency}</Text>
+        <Text style={styles.textPrice}>Price: {item.price} {item.currency}</Text>
       </View>
   </View>
   );
@@ -37,11 +38,15 @@ const styles = StyleSheet.create({
   textName: {
     fontSize: 20,
     fontWeight: "bold",
+    color: theme.TITLE_COLOR,
     marginBottom: 6,
   },
   textDescription: {
     marginBottom: 6,
   },
+  textPrice: {
+    color: theme.PRICE_COLOR,
+  }
 });
 
 
