@@ -25,7 +25,7 @@ const ProductList = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#DDD' }} />}
-          renderItem={(props) => (<ProductListItem {...props}/>)}
+          renderItem={( {item} ) => (<ProductListItem item={item}/>)}
         />
       )}
     </View>
