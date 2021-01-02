@@ -1,48 +1,66 @@
-import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
+import React, { useRef } from "react";
+import { Animated, Text, View, StyleSheet, Button } from "react-native";
 
-export default App = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+const App = () => {
+  // fadeAnim will be used as the value for opacity. Initial Value: 0
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
-  useEffect(() => {
-    fetch('https://6wavrrn6r7.execute-api.us-west-2.amazonaws.com/products')
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json)
-        setData(json.Items)
-      })
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
+  const fadeIn = () => {
+    // Will change fadeAnim value to 1 in 5 seconds
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 5000
+    }).start();
+  };
+
+  const fadeOut = () => {
+    // Will change fadeAnim value to 0 in 5 seconds
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 5000
+    }).start();
+  };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-    <View style={{ flex: 1, padding: 24 }}>
-      {isLoading ? <ActivityIndicator/> : (
-        <FlatList
-          data={data}
-          keyExtractor={({ id }, index) => id}
-          ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#DDD' }} />}
-          renderItem={({ item }) => (
-            <View style={{ flex: 1, flexDirection: 'row', padding: 6 }}>
-              <Image
-                style={{width: 50,height: 50, margin: 10}}
-                source={{
-                  uri: item.imageUrl,
-                }}
-              />
-              <View style={{ flex: 1, padding: 12 }}>
-                <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 6 }}>{item.name}</Text>
-                <Text style={{ marginBottom: 6 }}>{item.description}</Text>
-                <Text>Price: {item.price} {item.currency}</Text>
-              </View>
-              
-            </View>
-          )}
-        />
-      )}
+    <View style={styles.container}>
+      <Animated.View
+        style={[
+          styles.fadingContainer,
+          {
+            opacity: fadeAnim // Bind opacity to animated value
+          }
+        ]}
+      >
+        <Text style={styles.fadingText}>Fading View!</Text>
+      </Animated.View>
+      <View style={styles.buttonRow}>
+        <Button title="Fade In" onPress={fadeIn} />
+        <Button title="Fade Out" onPress={fadeOut} />
+      </View>
     </View>
-    </SafeAreaView>
   );
-};
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  fadingContainer: {
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    backgroundColor: "powderblue"
+  },
+  fadingText: {
+    fontSize: 28,
+    textAlign: "center",
+    margin: 10
+  },
+  buttonRow: {
+    flexDirection: "row",
+    marginVertical: 16
+  }
+});
+
+export default App;

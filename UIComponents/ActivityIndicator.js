@@ -25,3 +25,6 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+
+// <ActivityIndicator size="large" color="red" />
