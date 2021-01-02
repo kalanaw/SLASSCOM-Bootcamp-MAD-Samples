@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
+import { SafeAreaView, ActivityIndicator, FlatList, View } from 'react-native';
 import ProductListItem from "./ProductListItem";
 
 const ProductList = () => {
