@@ -1,7 +1,7 @@
 // Product details 2
 
-import React from 'react';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import { theme } from "./../../styles";
 
 const ProductDetail = () => {
