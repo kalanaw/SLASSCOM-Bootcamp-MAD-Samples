@@ -1,10 +1,11 @@
+import { useLinkProps } from "@react-navigation/native";
 import React from "react";
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { theme } from "./../../styles";
 
-const ProductListItem = ({item}) => {
+const ProductListItem = ({item, onPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image
         style={styles.image}
         source={{
@@ -16,7 +17,7 @@ const ProductListItem = ({item}) => {
         <Text style={styles.textDescription}>{item.description}</Text>
         <Text style={styles.textPrice}>Price: {item.price} {item.currency}</Text>
       </View>
-  </View>
+    </TouchableOpacity>
   );
 };
 

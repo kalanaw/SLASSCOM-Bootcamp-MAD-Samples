@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ActivityIndicator, FlatList, View } from 'react-native';
+import { SafeAreaView, ActivityIndicator, FlatList, View, StyleSheet } from 'react-native';
 import ProductListItem from "./ProductListItem";
 
-const ProductList = () => {
+const ProductList = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -17,20 +17,35 @@ const ProductList = () => {
       .finally(() => setLoading(false));
   }, []);
 
+  const onProductListItemTapped = () => {
+    navigation.navigate('ProductDetail');
+  }
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
-    <View style={{ flex: 1, padding: 24 }}>
+    <View style={styles.container}>
       {isLoading ? <ActivityIndicator/> : (
         <FlatList
           data={data}
           keyExtractor={({ id }, index) => id}
-          ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#DDD' }} />}
-          renderItem={( {item} ) => (<ProductListItem item={item}/>)}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+          renderItem={( {item} ) => (<ProductListItem item={item} onPress={onProductListItemTapped}/>)}
         />
       )}
     </View>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#DDD',
+  },
+});
 
 export default ProductList;
